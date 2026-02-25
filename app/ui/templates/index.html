@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NoTasteRequired</title>
+  <link rel="stylesheet" href="/static/chat-template.css" />
+  <script defer src="/static/chat-adapter.js"></script>
+  <script defer src="/static/chat-template.js"></script>
+</head>
+<body>
+  <main class="chat-shell" data-state="idle">
+    <header class="project-banner">
+      <div class="project-title">
+        <h1>NoTasteRequired</h1>
+        <span class="version-badge">beta</span>
+      </div>
+      <p>一個給理工直男的穿搭建議 agent</p>
+    </header>
+
+    <section class="hero-empty" id="hero-empty" aria-live="polite">
+      <h1>我可以幫你什麼忙？</h1>
+    </section>
+
+    <section class="timeline" id="timeline" aria-live="polite"></section>
+
+    <section class="composer-dock">
+      <form class="profile-form" id="profile-form" autocomplete="off" aria-label="需求資料">
+        <label class="profile-field" for="profile-scenario">
+          <span>場合（必填）</span>
+          <input id="profile-scenario" type="text" placeholder="例如：商務會議、約會晚餐、日常通勤" />
+        </label>
+        <label class="profile-field" for="profile-primary-scene">
+          <span>主要場景（必填）</span>
+          <input id="profile-primary-scene" type="text" placeholder="例如：室內辦公室、戶外街區、餐廳" />
+        </label>
+        <label class="profile-field" for="profile-preferences">
+          <span>偏好（選填）</span>
+          <input id="profile-preferences" type="text" placeholder="以逗號分隔，例如：俐落, 輕挺, 低彩度" />
+        </label>
+        <label class="profile-field" for="profile-exclusions">
+          <span>避免項目（選填）</span>
+          <input id="profile-exclusions" type="text" placeholder="以逗號分隔，例如：亮色, 寬褲, 皮鞋" />
+        </label>
+        <label class="profile-field" for="brand-select">
+          <span>品牌（必填）</span>
+          <select id="brand-select" aria-label="品牌選單">
+            <option value="">請選擇品牌</option>
+            <option value="UNIQLO">UNIQLO</option>
+            <option value="GU">GU</option>
+            <option value="OTHER">其他（請提供）</option>
+          </select>
+        </label>
+        <label class="profile-field" id="profile-brand-other-wrap" for="profile-brand-other" hidden>
+          <span>自訂品牌（必填）</span>
+          <input id="profile-brand-other" type="text" placeholder="若品牌選「其他」，請輸入品牌名稱" />
+        </label>
+
+        <div class="profile-actions">
+          <button class="profile-submit" id="profile-submit" type="submit">開始產生三套搭配</button>
+        </div>
+      </form>
+
+      <p class="profile-error" id="profile-error" role="status" aria-live="polite" hidden></p>
+
+      <div class="composer-main" id="chat-composer" hidden>
+        <form class="composer-pill" id="composer" autocomplete="off">
+          <textarea
+            id="composer-input"
+            rows="1"
+            placeholder="請輸入你的需求。"
+            aria-label="輸入需求"
+          ></textarea>
+
+          <button class="pill-send" type="submit" aria-label="送出">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19a1 1 0 0 1-1-1V8.42L8.7 10.71a1 1 0 1 1-1.4-1.42l4-3.99a1 1 0 0 1 1.4 0l4 4a1 1 0 1 1-1.4 1.41L13 8.41V18a1 1 0 0 1-1 1Z"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
