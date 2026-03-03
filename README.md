@@ -2,6 +2,10 @@
 
 NoTasteRequired is a FastAPI + LangGraph workflow for menswear outfit generation and product search.
 
+## Demo
+
+![NoTasteRequired demo](docs/demo.gif)
+
 ## Workflow
 
 - First design run: `collect -> design -> review -> present`
